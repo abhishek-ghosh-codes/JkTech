@@ -73,7 +73,7 @@ This project allows users to perform various S3 operations seamlessly. Below are
    and password and generate the token and use this token to access all the Api's to perform other operations.
 
 ## SWAGGER URL
-     http://localhost:8000/swagger/s3-api-docs/
+     http://localhost:8000/swagger/api-docs/
      
 
 **(Also I have mentioned all the steps in postman collections)**
