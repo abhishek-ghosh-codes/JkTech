@@ -1,13 +1,14 @@
 import { apiMethod } from "../common/api-constants";
 import { apiResponse } from "../common/api-response";
 import { Dao } from "../dao/dataAccessLayer";
-
-
+import { deleteObjectRules } from "../utils/deleteObjectRules";
+import validate from "../utils/payload-validator";
 
 export class DeleteObjectService{
     public delete = async (req:{}, event:{}, context:{}) => {
         try {
             let response:any;
+            validate({event},deleteObjectRules)
             const objDao = new Dao();
             console.log('start');
             
