@@ -197,18 +197,6 @@ export const s3swagger={
                 "type": "string",
                 "example":"s3-us-west-2"
             },
-            {
-                "in": "query",
-                "name": "filename",
-                "type": "string",
-                "example":"testtest123"
-            },
-            {
-                "in": "query",
-                "name": "fileContent",
-                "type": "string",
-                "example":"Hi My name is Abhi"
-            },
           ],
           "requestBody": {
             "required": true,
