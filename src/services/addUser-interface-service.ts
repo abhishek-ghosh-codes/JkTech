@@ -2,6 +2,8 @@ import { apiMethod } from "../common/api-constants";
 import { apiResponse } from "../common/api-response";
 import { Dao } from "../dao/dataAccessLayer";
 import { Constant } from "../utils/constants";
+import validate from '../utils/payload-validator';
+import { addUserRules } from "../utils/addUserRules";
 const jwt = require('jsonwebtoken');
 require('dotenv').config();
 
@@ -10,6 +12,7 @@ export class AddUserService{
     public insert = async (req:{}, event:{}, context:{}) => {
         try {
             let response:any;
+            validate({event},addUserRules);
             const objDao = new Dao();
             let result;
             const checkResponse = await objDao.checkUser(event);

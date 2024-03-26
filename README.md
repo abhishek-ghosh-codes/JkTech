@@ -61,7 +61,7 @@ This project allows users to perform various S3 operations seamlessly. Below are
 --User has to use the token for authentication for rest of the apis other than login and addUser api.
 --First create a s3 bucket using createbucket api (pass the required fields mentioned in swagger and postman collection both) and pass bucket_id and user_id(you can find the user     id in get users api).
 -- Then bucket will be created.
--- User can also check the bucket list using the getbucket api by passing the user_id and will get the bucket_id,bucket_name and userid.
+-- User can also check the bucket list using the getbucket api and will get the bucket_id,bucket_name and userid.
 -- After that User can upload the object in the particular bucket same as AWS S3 by passing the bucket_id and bucket_name in params and file in form data name as file and upload 
    any object which the user wants to upload in the bucket. **(PLEASE USE POSTMAN COLLECTION FOR addObject Query as user can test the upload file functionality)**
 -- The file which user's wants to upload,if it is already present in S3 bucket with same name,the new file will replaced the older one.

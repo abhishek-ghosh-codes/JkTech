@@ -3,7 +3,7 @@ export class Constant{
     static addUserQuery =`Insert into s3.users(username,password,role) values ($1,$2,$3)`;
     static getuserQuery =`select * from s3.users`;
     static addBucketQuery =`Insert into s3.buckets(name,user_id) values ($1,$2)`;
-    static getBucketQuery = `select * from s3.buckets where user_id=$1`;
+    static getBucketQuery = `select * from s3.buckets`;
     static addObjectQuery =`Insert into s3.files(bucket_id,filename,url) values ($1,$2,$3)`;
     static getObjectQuery =`select * from s3.files where bucket_id=$1`;
     static deleteObjectQuery = `delete from s3.files where bucket_id=$1 and filename =$2`;

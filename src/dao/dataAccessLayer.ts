@@ -218,7 +218,7 @@ export class Dao {
             const client = getClient();
             try{
                 await connectDB(client);
-                const result = await client.query(Constant.getBucketQuery,[params.user_id])
+                const result = await client.query(Constant.getBucketQuery)
                 resolve(result.rows);
             }
             catch(err){
