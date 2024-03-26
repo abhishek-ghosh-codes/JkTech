@@ -5,16 +5,13 @@ const validate = (data: any, rules: Validator.Rules) => {
     
     const validation = new Validator(data, rules);
     if (validation.passes()) {
-      
-        return true;
+      return true;
     }
     else {
-       
-        let arrList: any[] = [];
+       let arrList: any[] = [];
         Object.values(validation.errors.all()).forEach(element => {
             arrList = [...element, ...arrList];
         });
-        
         const error = new Error(`${JSON.stringify({errors: arrList})}`);
         error.name = 'Invalid Payload';
         throw error;
