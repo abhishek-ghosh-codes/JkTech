@@ -388,14 +388,6 @@ export const s3swagger={
           "description": "",
           "operationId": "read",
           "produces": ["application/json"],
-          "parameters": [
-            {
-              "in": "query",
-              "name": "user_id",
-              "type": "string",
-              "example":"3"
-            },
-          ],
           "responses": {
             "200": {
               "description": "success response Payload structure",
