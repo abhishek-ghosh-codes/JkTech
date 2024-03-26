@@ -1,12 +1,13 @@
 import { apiMethod } from "../common/api-constants";
 import { apiResponse } from "../common/api-response";
 import { Dao } from "../dao/dataAccessLayer";
-
-
+import { readObjectRules } from "../utils/readObjectRules";
+import validate from "../utils/payload-validator";
 export class ReadObjectservice{
     public read = async (req:{}, event:{}, context:{}) => {
         try {
             let response:any;
+            validate({event},readObjectRules);
             const objDao = new Dao();
             let result ='';
 

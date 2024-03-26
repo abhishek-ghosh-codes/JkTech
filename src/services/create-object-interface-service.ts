@@ -1,13 +1,15 @@
 import { apiMethod } from "../common/api-constants";
 import { apiResponse } from "../common/api-response";
 import { Dao } from "../dao/dataAccessLayer";
-
+import { addObjectRules } from "../utils/addObjectRules";
+import validate from "../utils/payload-validator";
 
 
 export class CreateObjectService{
     public insert = async (req:{}, event:any, context:{}) => {
         try {
             let response:any;
+            validate({event},addObjectRules);
             const objDao = new Dao();
             let result;
             const checkObject = await objDao.checkObject(event.file);

@@ -421,7 +421,7 @@ export const s3swagger={
       },
       "/getObject": {
         "get": {
-          "tags": ["get opject API"],
+          "tags": ["get object API"],
           "summary": "get object API",
           "description": "",
           "operationId": "read",
