@@ -37,7 +37,7 @@ export class App{
     private config() {
         this.app.use(express.json({ limit: '200mb' }));
         this.app.use(express.urlencoded({ extended: true }));
-        this.app.use('/swagger-adr/adr-api-docs', swaggerUi.serve, (_req, res) => {
+        this.app.use('/swagger/api-docs', swaggerUi.serve, (_req, res) => {
             const html = swaggerUi.generateHTML(s3swagger);
             res.send(html);
         });
