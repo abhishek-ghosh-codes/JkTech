@@ -57,5 +57,19 @@ This project allows users to perform various S3 operations seamlessly. Below are
 
 
 ## Usage
---User has to use the addUser api to add himself/herself in users db.
---
+--User has to use the addUser api to add himself/herself in users db after that user will get auth token .
+--User has to use the token for authentication for rest of the apis other than login and addUser api.
+--First create a s3 bucket using createbucket api (pass the required fields mentioned in swagger and postman collection both) and pass bucket_id and user_id(you can find the user     id in get users api).
+-- Then bucket will be created.
+-- User can also check the bucket list using the getbucket api by passing the user_id and will get the bucket_id,bucket_name and userid.
+-- After that User can upload the object in the particular bucket same as AWS S3 by passing the bucket_id and bucket_name in params and file in form data name as file and upload 
+   any object which the user wants to upload in the bucket. **(PLEASE USE POSTMAN COLLECTION FOR addObject Query as user can test the upload file functionality)**
+-- The file which user's wants to upload,if it is already present in S3 bucket with same name,the new file will replaced the older one.
+-- The user can replace the object by uploading the object with same name which is already present in bucket. 
+-- After that you can check the objects for every bucket respectively by using the getObject Api and pass the bucket_id.
+-- After uploading the object in the S3 Bucket , user can also access that object by hitting the readObject Api and pass the bucket_id and filename.
+-- After that User can also delete the object from the bucket by passing bucket_id and filename in delObject api.
+-- Lastly,if the user already added himself/herself in the db and again wants to perform all the operation then he/she has to login by using the /login api and pass the username 
+   and password and generate the token and use this token to access all the Api's to perform other operations.
+
+   
