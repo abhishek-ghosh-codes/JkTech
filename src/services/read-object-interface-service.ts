@@ -19,14 +19,14 @@ export class ReadObjectservice{
                 result = 'No Object found';
             }
             if (result) {
-                response = apiResponse(event, context, result, apiMethod.GET, false, '');
+                response = apiResponse(event, context, result, apiMethod.POST, false, '');
             }
 
             return response;
         }
         catch (error) {
             const message = 'error';
-            apiResponse(event, context, {}, apiMethod.GET, true, message);
+            apiResponse(event, context, {}, apiMethod.POST, true, message);
             return error;
         }
         return true;

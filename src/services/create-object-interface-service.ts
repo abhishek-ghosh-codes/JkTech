@@ -27,13 +27,13 @@ export class CreateObjectService{
             }
             if (result) {
                 console.log(`Line 12`);
-                response = apiResponse(event, context, result, apiMethod.GET, false, '');
+                response = apiResponse(event, context, result, apiMethod.PUT, false, '');
             }
             return response;
         }
         catch (error) {
             const message = 'error';
-            apiResponse(event, context, {}, apiMethod.GET, true, message);
+            apiResponse(event, context, {}, apiMethod.PUT, true, message);
             return error;
         }
         return true;
