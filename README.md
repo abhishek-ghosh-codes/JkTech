@@ -27,6 +27,7 @@ Users can sign up and add themselves to the user list with different roles such 
  
 First, you have to create a database in Postgress and create a schema named 's3' and create 3 tables users, buckets, files.
 query for creating these tables:
+
 *1. users table*:
 
  
@@ -42,7 +43,7 @@ CREATE TABLE IF NOT EXISTS s3.users
 
 
  *2. buckets table* :
-sh
+
 CREATE TABLE IF NOT EXISTS s3.buckets
 (
    id integer NOT NULL DEFAULT nextval('s3.buckets_id_seq'::regclass),
@@ -98,12 +99,12 @@ CREATE TABLE IF NOT EXISTS s3.files
 - Delete objects from a bucket using the delObject API.
     - Provide bucket_id and filename to delete the specified object.
 - *Additional Notes:*
-   - Utilize the provided Postman collection for testing functionalities, particularly for uploading files.
+   - **Utilize the provided Postman collection for testing functionalities, particularly for uploading files using addObject Api.**
    - Users must log in using the /login API to access bucket and object operations if they have previously registered.
    - Authentication tokens are mandatory for all APIs except for login and addUser.
 
 ## SWAGGER URL
-sh
+
      http://localhost:8000/swagger/api-docs/
      
 
