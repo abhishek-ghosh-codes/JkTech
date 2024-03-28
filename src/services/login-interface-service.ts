@@ -6,6 +6,7 @@ import validate from "../utils/payload-validator";
 import { loginRules } from "../utils/payload-rules";
 const jwt = require('jsonwebtoken');
 require('dotenv').config();
+import Crypto from "crypto";
 
 
 export class LoginService{
@@ -18,7 +19,7 @@ export class LoginService{
             const checkResponse = await objDao.loginUser(event);
             if (checkResponse.rowCount > 0) {
                 result = 'User already Exists. Please Login with your credentials.';
-                
+                //const secretKey = Crypto.randomBytes(32).toString('hex');
                 const token = jwt.sign({ event }, Constant.secretKey, { expiresIn: '1h' });
                 result = {
                     token: token,

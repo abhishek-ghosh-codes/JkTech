@@ -29,104 +29,6 @@ export const s3swagger={
         }
       ],
     "paths": {
-        "/login": {
-            "post": {
-              "tags": ["Login"],
-              "summary": "LOGIN API",
-              "description": "",
-              "operationId": "CREATE",
-              "produces": ["application/json"],
-              "parameters": [
-                {
-                  "in": "body",
-                  "name": "body",
-                  "description": "Insert New Users",
-                  "required": true,
-                  "schema": {
-                    "$ref": "#/definitions/login"
-                  }
-                }
-              ],
-              "responses": {
-                "200": {
-                  "description": "success response Payload structure",
-                  "schema": {
-                    "$ref": "#/definitions/ApiResponse"
-                  }
-                },
-                "204": {
-                  "description": "No content response",
-                  "schema": {
-                    "$ref": "#/definitions/ApiResponse-204"
-                  }
-                },
-                "400": {
-                  "description": "bad request payload response",
-                  "schema": {
-                    "$ref": "#/definitions/ApiResponse-400"
-                  }
-                },
-                "401": {
-                  "description": "unauthorized request payload",
-                  "schema": {
-                    "$ref": "#/definitions/ApiResponse-401"
-                  }
-                },
-                "500": {
-                  "description": "internal error"
-                }
-              }
-            }
-          },
-      "/createBucket": {
-        "post": {
-          "tags": ["create Bucket"],
-          "summary": "CREATE S3 BUCKET API",
-          "description": "",
-          "operationId": "CREATE",
-          "produces": ["application/json"],
-          "parameters": [
-            {
-              "in": "body",
-              "name": "body",
-              "description": "Create new Bucket in AWS",
-              "required": true,
-              "schema": {
-                "$ref": "#/definitions/add-Bucket"
-              }
-            }
-          ],
-          "responses": {
-            "200": {
-              "description": "success response Payload structure",
-              "schema": {
-                "$ref": "#/definitions/ApiResponse"
-              }
-            },
-            "204": {
-              "description": "No content response",
-              "schema": {
-                "$ref": "#/definitions/ApiResponse-204"
-              }
-            },
-            "400": {
-              "description": "bad request payload response",
-              "schema": {
-                "$ref": "#/definitions/ApiResponse-400"
-              }
-            },
-            "401": {
-              "description": "unauthorized request payload",
-              "schema": {
-                "$ref": "#/definitions/ApiResponse-401"
-              }
-            },
-            "500": {
-              "description": "internal error"
-            }
-          }
-        }
-      },
       "/addUser": {
         "post": {
           "tags": ["add User Api"],
@@ -176,6 +78,182 @@ export const s3swagger={
           }
         }
       },
+      "/login": {
+        "post": {
+          "tags": ["Login"],
+          "summary": "LOGIN API",
+          "description": "",
+          "operationId": "CREATE",
+          "produces": ["application/json"],
+          "parameters": [
+            {
+              "in": "body",
+              "name": "body",
+              "description": "Insert New Users",
+              "required": true,
+              "schema": {
+                "$ref": "#/definitions/login"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "success response Payload structure",
+              "schema": {
+                "$ref": "#/definitions/ApiResponse"
+              }
+            },
+            "204": {
+              "description": "No content response",
+              "schema": {
+                "$ref": "#/definitions/ApiResponse-204"
+              }
+            },
+            "400": {
+              "description": "bad request payload response",
+              "schema": {
+                "$ref": "#/definitions/ApiResponse-400"
+              }
+            },
+            "401": {
+              "description": "unauthorized request payload",
+              "schema": {
+                "$ref": "#/definitions/ApiResponse-401"
+              }
+            },
+            "500": {
+              "description": "internal error"
+            }
+          }
+        }
+      },
+      "/getUser": {
+        "get": {
+          "tags": ["get Users Api"],
+          "summary": "GET USERS API",
+          "description": "",
+          "operationId": "read",
+          "produces": ["application/json"],
+          "responses": {
+            "200": {
+              "description": "success response Payload structure",
+              "schema": {
+                "$ref": "#/definitions/ApiResponse"
+              }
+            },
+            "204": {
+              "description": "No content response",
+              "schema": {
+                "$ref": "#/definitions/ApiResponse-204"
+              }
+            },
+            "400": {
+              "description": "bad request payload response",
+              "schema": {
+                "$ref": "#/definitions/ApiResponse-400"
+              }
+            },
+            "401": {
+              "description": "unauthorized request payload",
+              "schema": {
+                "$ref": "#/definitions/ApiResponse-401"
+              }
+            },
+            "500": {
+              "description": "internal error"
+            }
+          }
+        }
+      },
+     
+      "/createBucket": {
+        "post": {
+          "tags": ["create Bucket"],
+          "summary": "CREATE S3 BUCKET API",
+          "description": "",
+          "operationId": "CREATE",
+          "produces": ["application/json"],
+          "parameters": [
+            {
+              "in": "body",
+              "name": "body",
+              "description": "Create new Bucket in AWS",
+              "required": true,
+              "schema": {
+                "$ref": "#/definitions/add-Bucket"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "success response Payload structure",
+              "schema": {
+                "$ref": "#/definitions/ApiResponse"
+              }
+            },
+            "204": {
+              "description": "No content response",
+              "schema": {
+                "$ref": "#/definitions/ApiResponse-204"
+              }
+            },
+            "400": {
+              "description": "bad request payload response",
+              "schema": {
+                "$ref": "#/definitions/ApiResponse-400"
+              }
+            },
+            "401": {
+              "description": "unauthorized request payload",
+              "schema": {
+                "$ref": "#/definitions/ApiResponse-401"
+              }
+            },
+            "500": {
+              "description": "internal error"
+            }
+          }
+        }
+      },
+      "/getBucket": {
+        "get": {
+          "tags": ["get Bucket List Api"],
+          "summary": "READ API",
+          "description": "",
+          "operationId": "read",
+          "produces": ["application/json"],
+          "responses": {
+            "200": {
+              "description": "success response Payload structure",
+              "schema": {
+                "$ref": "#/definitions/ApiResponse"
+              }
+            },
+            "204": {
+              "description": "No content response",
+              "schema": {
+                "$ref": "#/definitions/ApiResponse-204"
+              }
+            },
+            "400": {
+              "description": "bad request payload response",
+              "schema": {
+                "$ref": "#/definitions/ApiResponse-400"
+              }
+            },
+            "401": {
+              "description": "unauthorized request payload",
+              "schema": {
+                "$ref": "#/definitions/ApiResponse-401"
+              }
+            },
+            "500": {
+              "description": "internal error"
+            }
+          }
+        }
+      },
+     
       "/addObject": {
         "put": {
           "tags": ["add Object Api"],
@@ -214,6 +292,52 @@ export const s3swagger={
               }
             }
           },
+          "responses": {
+            "200": {
+              "description": "success response Payload structure",
+              "schema": {
+                "$ref": "#/definitions/ApiResponse"
+              }
+            },
+            "204": {
+              "description": "No content response",
+              "schema": {
+                "$ref": "#/definitions/ApiResponse-204"
+              }
+            },
+            "400": {
+              "description": "bad request payload response",
+              "schema": {
+                "$ref": "#/definitions/ApiResponse-400"
+              }
+            },
+            "401": {
+              "description": "unauthorized request payload",
+              "schema": {
+                "$ref": "#/definitions/ApiResponse-401"
+              }
+            },
+            "500": {
+              "description": "internal error"
+            }
+          }
+        }
+      },
+      "/getObject": {
+        "get": {
+          "tags": ["get object API"],
+          "summary": "get object API",
+          "description": "",
+          "operationId": "read",
+          "produces": ["application/json"],
+          "parameters": [
+            {
+              "in": "query",
+              "name": "bucket_id",
+              "type": "string",
+              "example":"3"
+            },
+          ],
           "responses": {
             "200": {
               "description": "success response Payload structure",
@@ -343,128 +467,8 @@ export const s3swagger={
           }
         }
       },
-      "/getUser": {
-        "get": {
-          "tags": ["get Users Api"],
-          "summary": "GET USERS API",
-          "description": "",
-          "operationId": "read",
-          "produces": ["application/json"],
-          "responses": {
-            "200": {
-              "description": "success response Payload structure",
-              "schema": {
-                "$ref": "#/definitions/ApiResponse"
-              }
-            },
-            "204": {
-              "description": "No content response",
-              "schema": {
-                "$ref": "#/definitions/ApiResponse-204"
-              }
-            },
-            "400": {
-              "description": "bad request payload response",
-              "schema": {
-                "$ref": "#/definitions/ApiResponse-400"
-              }
-            },
-            "401": {
-              "description": "unauthorized request payload",
-              "schema": {
-                "$ref": "#/definitions/ApiResponse-401"
-              }
-            },
-            "500": {
-              "description": "internal error"
-            }
-          }
-        }
-      },
-      "/getBucket": {
-        "get": {
-          "tags": ["get Bucket List Api"],
-          "summary": "READ API",
-          "description": "",
-          "operationId": "read",
-          "produces": ["application/json"],
-          "responses": {
-            "200": {
-              "description": "success response Payload structure",
-              "schema": {
-                "$ref": "#/definitions/ApiResponse"
-              }
-            },
-            "204": {
-              "description": "No content response",
-              "schema": {
-                "$ref": "#/definitions/ApiResponse-204"
-              }
-            },
-            "400": {
-              "description": "bad request payload response",
-              "schema": {
-                "$ref": "#/definitions/ApiResponse-400"
-              }
-            },
-            "401": {
-              "description": "unauthorized request payload",
-              "schema": {
-                "$ref": "#/definitions/ApiResponse-401"
-              }
-            },
-            "500": {
-              "description": "internal error"
-            }
-          }
-        }
-      },
-      "/getObject": {
-        "get": {
-          "tags": ["get object API"],
-          "summary": "get object API",
-          "description": "",
-          "operationId": "read",
-          "produces": ["application/json"],
-          "parameters": [
-            {
-              "in": "query",
-              "name": "bucket_id",
-              "type": "string",
-              "example":"3"
-            },
-          ],
-          "responses": {
-            "200": {
-              "description": "success response Payload structure",
-              "schema": {
-                "$ref": "#/definitions/ApiResponse"
-              }
-            },
-            "204": {
-              "description": "No content response",
-              "schema": {
-                "$ref": "#/definitions/ApiResponse-204"
-              }
-            },
-            "400": {
-              "description": "bad request payload response",
-              "schema": {
-                "$ref": "#/definitions/ApiResponse-400"
-              }
-            },
-            "401": {
-              "description": "unauthorized request payload",
-              "schema": {
-                "$ref": "#/definitions/ApiResponse-401"
-              }
-            },
-            "500": {
-              "description": "internal error"
-            }
-          }
-        }
-      },
+     
+   
   
     },
     "definitions": {

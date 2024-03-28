@@ -4,6 +4,7 @@ import { Dao } from "../dao/dataAccessLayer";
 import { Constant } from "../utils/constants";
 import validate from '../utils/payload-validator';
 import { addUserRules } from "../utils/payload-rules";
+import Crypto from "crypto";
 const jwt = require('jsonwebtoken');
 require('dotenv').config();
 
@@ -23,6 +24,7 @@ export class AddUserService {
                 const dbResponse = await objDao.addUser(event);
                 console.log('dbResponse', dbResponse);
                 if (dbResponse.rowCount > 0) {
+                
                     const token = jwt.sign({ event }, Constant.secretKey, { expiresIn: '1h' });
                     result = {
                         token: token,
