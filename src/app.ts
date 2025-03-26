@@ -33,6 +33,7 @@ export class App {
         this.config();
         this.setupRoutes();
     }
+    
     private config() {
         this.app.use(express.json({ limit: '200mb' }));
         this.app.use(express.urlencoded({ extended: true }));
