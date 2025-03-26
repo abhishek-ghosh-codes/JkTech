@@ -75,6 +75,7 @@ export class App {
     }
 
     public setupRoutes() {
+        var z='12'
         this.app.get('/getUser', async (req, res) => {
             const headers = req.query 
             const result = await getUserService.read(req, headers, {});
